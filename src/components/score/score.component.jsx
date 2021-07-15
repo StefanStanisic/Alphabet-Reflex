@@ -7,8 +7,8 @@ const ScoreDisplay = ({hit, miss, left}) => {
     <div className='score-container'>
       <p className='title'>Score</p>
       <p className='hit-value'>Hit: {hit}</p>
-      <p className='miss-value'>Miss {miss}</p>
-      <p className='left-value'>Left {left}</p>
+      <p className='miss-value'>Miss: {miss}</p>
+      <p className='left-value'>Left: {left}</p>
     </div>
   )
 }
