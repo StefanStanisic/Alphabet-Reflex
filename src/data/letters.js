@@ -1,0 +1,30 @@
+let letters = [
+  {letter: 'A', number: 1},
+  {letter: 'B', number: 2},
+  {letter: 'C', number: 3},
+  {letter: 'D', number: 4},
+  {letter: 'E', number: 5},
+  {letter: 'F', number: 6},
+  {letter: 'G', number: 7},
+  {letter: 'H', number: 8},
+  {letter: 'I', number: 9},
+  {letter: 'J', number: 10},
+  {letter: 'K', number: 11},
+  {letter: 'L', number: 12},
+  {letter: 'M', number: 13},
+  {letter: 'N', number: 14},
+  {letter: 'O', number: 15},
+  {letter: 'P', number: 16},
+  {letter: 'Q', number: 17},
+  {letter: 'R', number: 18},
+  {letter: 'S', number: 19},
+  {letter: 'T', number: 20},
+  {letter: 'U', number: 21},
+  {letter: 'V', number: 22},
+  {letter: 'W', number: 23},
+  {letter: 'X', number: 24},
+  {letter: 'Y', number: 25},
+  {letter: 'Z', number: 26}
+];
+
+export default letters;

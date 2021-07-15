@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+import LetterDisplay from '../../components/letter/letter.component';
+import letters from '../../data/letters';
 
 import './homepage.styles.css';
 
 const HomePage = () => {
   const [gameStarted, setGameStarted] = useState('false');
   const [gameDifficulty, setGameDifficulty] = useState('');
+  let lettersArray = [];
+  letters.forEach(elem => {
+    lettersArray.push(<LetterDisplay letter={elem.letter} number={elem.number} key={elem.number}/>)
+  })
 
   return (
     <div className='main-container'>
@@ -25,6 +32,18 @@ const HomePage = () => {
             <button className='start-stop-button' onClick={() => setGameStarted(!gameStarted)}>Start Game</button> 
           : <button className='start-stop-button' onClick={() => setGameStarted(!gameStarted)}>Stop Game</button>
         }
+      </div>
+
+      <div className="number-display-container">
+        <p className='number-display'>15</p>
+      </div>
+
+      <div className="input-container">
+        <input type="text" name="letter-input" className='letter-input' placeholder='input-letter' />
+      </div>
+
+      <div className="letters-container">
+        {lettersArray}
       </div>
     </div>
   );
