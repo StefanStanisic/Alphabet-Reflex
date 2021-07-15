@@ -12,3 +12,5 @@ const ScoreDisplay = ({hit, miss, left}) => {
     </div>
   )
 }
+
+export default ScoreDisplay;
