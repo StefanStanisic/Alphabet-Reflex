@@ -14,7 +14,7 @@ const HomePage = () => {
   const [timerExpired, setTimerExpired] = useState(false)
   const [lettersMissed, setLettersMissed] = useState(0);
   const [lettersLeft, setLettersLeft] = useState(26);
-  const [nums, setNums] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26])
+  const [nums, setNums] = useState([...Array(26).keys()].map(d => d + 1))
 
   const [inputState, setInputState] = useState([])
 
@@ -25,24 +25,24 @@ const HomePage = () => {
   const gameStarted = useRef(false)
 
   const finishGame = () => {
-    let score = lettersHit + 1;
-    alert("Your score is " + score + "/" + 26)
-    setInputState([]);
-    setNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]);
-    setLettersLeft(26);
-    setLettersMissed(0);
-    setLettersHit(0);
-    setGameDifficulty(0);
-    setDisplayNumber();
-    inputRef.current.value = '';
-    gameStarted.current = false;
+    setTimeout(() => {
+      setInputState([]);
+      setNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]);
+      setLettersLeft(26);
+      setLettersMissed(0);
+      setLettersHit(0);
+      setGameDifficulty(0);
+      setDisplayNumber();
+      inputRef.current.value = '';
+      gameStarted.current = false;
 
-    radioRef1.current.checked = false;
-    radioRef2.current.checked = false;
-    radioRef3.current.checked = false;
-    radioRef1.current.disabled = false;
-    radioRef2.current.disabled = false;
-    radioRef3.current.disabled = false;
+      radioRef1.current.checked = false;
+      radioRef2.current.checked = false;
+      radioRef3.current.checked = false;
+      radioRef1.current.disabled = false;
+      radioRef2.current.disabled = false;
+      radioRef3.current.disabled = false;
+    }, 2000);
   }
 
   const startGame = () => {
@@ -50,7 +50,7 @@ const HomePage = () => {
       alert('You have to choose dificulty')
     }
     if (gameDifficulty !== 0) {
-      console.log(gameDifficulty)
+      inputRef.current.disabled = false;
       inputRef.current.focus()
       gameStarted.current = true
       radioRef1.current.disabled = true;
@@ -78,6 +78,8 @@ const HomePage = () => {
       setLettersMissed(prev => prev + 1);
       setLettersLeft(prev => prev - 1);
     }
+    inputRef.current.disabled = true;
+    inputRef.current.value = '';
   }
 
   useEffect(() => {
@@ -119,7 +121,8 @@ const HomePage = () => {
     setLettersHit(0);
     setLettersMissed(0);
     setLettersLeft(26);
-    setNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]);
+    gameStarted.current = false;
+    setNums([...Array(26).keys()].map(d => d + 1));
     inputRef.current.value = '';
   }
 
