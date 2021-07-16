@@ -4,8 +4,6 @@ import LetterDisplay from '../../components/letter/letter.component';
 import ScoreDisplay from '../../components/score/score.component';
 
 import letters from '../../data/letters';
-// import numbers from '../../data/numbers';
-// import { cl } from '../../utils';
 
 import './homepage.styles.css';
 
@@ -27,20 +25,30 @@ const HomePage = () => {
   const gameStarted = useRef(false)
 
   const finishGame = () => {
+    let score = lettersHit + 1;
+    alert("Your score is " + score + "/" + 26)
     setInputState([]);
     setNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]);
     setLettersLeft(26);
     setLettersMissed(0);
     setLettersHit(0);
     setGameDifficulty(0);
-    gameStarted.current = false
+    setDisplayNumber();
+    inputRef.current.value = '';
+    gameStarted.current = false;
 
     radioRef1.current.checked = false;
     radioRef2.current.checked = false;
     radioRef3.current.checked = false;
+    radioRef1.current.disabled = false;
+    radioRef2.current.disabled = false;
+    radioRef3.current.disabled = false;
   }
 
   const startGame = () => {
+    if(gameDifficulty === 0) {
+      alert('You have to choose dificulty')
+    }
     if (gameDifficulty !== 0) {
       console.log(gameDifficulty)
       inputRef.current.focus()
@@ -111,6 +119,8 @@ const HomePage = () => {
     setLettersHit(0);
     setLettersMissed(0);
     setLettersLeft(26);
+    setNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]);
+    inputRef.current.value = '';
   }
 
   return (

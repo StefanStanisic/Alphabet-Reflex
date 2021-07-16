@@ -1,7 +1,8 @@
 .score-container {
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .score-container p {
