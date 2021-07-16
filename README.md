@@ -1,6 +1,6 @@
 # Alphabet Reflex
 
-Alphabet Reflex game where you test your reflexes by entering letters of Alphabett that are assigned to number showed to you.
+Alphabet Reflex is a game where you test your reflexes by entering letters of Alphabett that are assigned to number showed to you.
 
 ## How sto start game ?
 
