@@ -1,0 +1,21 @@
+.score-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 20px;
+}
+
+.score-container p {
+  margin: 10px 10px;
+}
+
+.hit-value {
+  color: green;
+}
+
+.miss-value {
+  color: red;
+}
+
+.left-value {
+  color: #7F00FF;
+}
