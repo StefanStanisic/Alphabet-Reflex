@@ -27,7 +27,7 @@ const HomePage = () => {
   const finishGame = () => {
     setTimeout(() => {
       setInputState([]);
-      setNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]);
+      setNums([...Array(26).keys()].map(d => d + 1));
       setLettersLeft(26);
       setLettersMissed(0);
       setLettersHit(0);
